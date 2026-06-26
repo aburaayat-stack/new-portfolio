@@ -384,10 +384,9 @@
         <!-- الاسكرين شوت الخاصة بالحالة الأولى -->
         <div class="card-screenshot">
           <!-- ملحوظة للتعديل: امسح الـ ديف ده وحط مكانه تاجر صورة عادي كدا: <img src="img/tiktok-case1.png" alt="نتائج تيك توك"> -->
-          <div class="screenshot-placeholder">
-            <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-            لوحة تحكم تيك توك Ads الخاصة بهذه الحملة<br><span style="font-size:11px; color:var(--muted)">[استبدل هذا الـ placeholder بصورتك]</span>
-          </div>
+         <div class="card-screenshot">
+  <img src="tiktok-result.png" alt="نتائج حملة تيك توك">
+</div>
         </div>
       </div>
 
