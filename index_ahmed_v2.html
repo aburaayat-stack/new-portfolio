@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Alaa - Digital Marketing Strategist</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --gold:#f5c842;
+      --gold-dim:rgba(245,200,66,0.15);
+      --bg:#0d0d18;
+      --bg2:#111120;
+      --bg3:#181828;
+      --text:#ece8de;
+      --muted:#7a7878;
+      --faint:rgba(255,255,255,0.055);
+      --border:rgba(255,255,255,0.09);
+      --green:#25d366;
+    }
+    body {
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 70% 45% at 15% 0%, rgba(120,80,20,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 40% at 90% 15%, rgba(80,50,10,0.14) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 50% at 50% 100%, rgba(30,20,60,0.35) 0%, transparent 60%);
+      margin: 0;
+      padding: 0;
+    }
+    .root{
+      font-family:'Cairo',sans-serif;
+      color:var(--text);
+      direction:rtl;
+      width:100%;
+      font-size:16px;
+      overflow-x: hidden; /* يمنع أي تصفح عرضي مزعج على الموبايل */
+    }
+
+    /* NAV */
+    .nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px 20px;
+      background:rgba(13,13,24,0.93);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+      position:sticky;top:0;z-index:99;
+    }
+    .nav-logo{font-size:18px;font-weight:800;color:var(--text)}
+    .nav-logo b{color:var(--gold)}
+    .nav-wa{
+      display:inline-flex;align-items:center;gap:6px;
+      background:linear-gradient(135deg,#c9920a,var(--gold));color:#0d0d18;
+      font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;
+      padding:8px 14px;border-radius:8px;text-decoration:none;
+    }
+
+    /* HERO */
+    .hero{
+      padding:40px 20px 32px;
+      text-align:center;
+      position:relative;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;top:-80px;left:50%;transform:translateX(-50%);
+      width:260px;height:260px;
+      background:radial-gradient(circle,rgba(245,200,66,0.08) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .hero-name{
+      font-size:36px; /* تصغير نسبي ليناسب الشاشات الصغيرة ولا ينكسر السطر بشكل سيء */
+      font-weight:900;line-height:1.1;
+      color:#fff;letter-spacing:-1px;
+      margin-bottom:6px;
+    }
+    .hero-name span{color:var(--gold)}
+    .hero-title{
+      font-size:18px;font-weight:600;
+      color:var(--gold);margin-bottom:16px;
+    }
+    .hero-desc{
+      font-size:15px;color:#9a9488;
+      line-height:1.8;margin-bottom:28px;
+    }
+
+    /* BTNS */
+    .btns{
+      display:flex;flex-direction:column;gap:10px;
+      margin-bottom:28px;
+    }
+    .btn-wa{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      background:var(--green);color:#fff;
+      font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;
+      padding:14px 20px;border-radius:10px;text-decoration:none;
+      width:100%;
+    }
+    .btn-row{
+      display:flex;
+      flex-direction: column; /* جعل الأزرار فوق بعضها على الموبايل لتوفير مساحة للنص */
+      gap:10px;
+    }
+    @media(min-width: 400px) {
+      .btn-row { flex-direction: row; } /* لو الشاشة أعرض قليلاً يرجعوا جمب بعض */
+    }
+    .btn-out{
+      display:flex;align-items:center;justify-content:center;gap:6px;
+      background:var(--faint);color:var(--text);
+      border:1px solid var(--border);
+      font-family:'Cairo',sans-serif;font-size:14px;font-weight:600;
+      padding:12px 14px;border-radius:10px;text-decoration:none;
+      flex:1;text-align:center;
+    }
+
+    /* QUOTE */
+    .quote{
+      border-right:3px solid var(--gold);
+      padding:10px 14px;
+      text-align:right;
+      font-size:15px;font-style:italic;
+      color:#c0b8a8;line-height:1.9;
+      display:block;
+    }
+
+    hr{border:none;border-top:1px solid var(--border);margin:0}
+
+    /* STATS */
+    .stats-wrap{padding:32px 20px}
+    .eyebrow{
+      font-size:12px;font-weight:700;letter-spacing:2px;
+      color:var(--gold);text-transform:uppercase;
+      text-align:center;margin-bottom:16px;
+    }
+    .stats-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    }
+    .stat{
+      text-align:center;padding:16px 8px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--bg3),rgba(30,24,10,0.7));
+      border:1px solid rgba(245,200,66,0.12);
+    }
+    .stat-n{font-size:22px;font-weight:900;color:var(--gold);display:block;line-height:1.1;
+      text-shadow:0 0 20px rgba(245,200,66,0.3);}
+    .stat-l{font-size:12px;color:var(--muted);margin-top:4px;display:block;line-height:1.4}
+
+    /* SECTION */
+    .sec{padding:32px 20px}
+    .sec-title-gold{font-size:26px;font-weight:900;color:var(--gold);margin-bottom:20px}
+    .sec-title-white{font-size:26px;font-weight:900;color:#f5f0e8;margin-bottom:20px}
+
+    /* SERVICES */
+    .services{display:flex;flex-direction:column;gap:12px}
+    .s-card{
+      padding:18px;border-radius:14px;
+      background:linear-gradient(135deg,var(--bg3),rgba(22,18,8,0.8));
+      border:1px solid rgba(255,255,255,0.07);
+      border-right:2px solid rgba(245,200,66,0.2);
+    }
+    .s-ico{font-size:22px;margin-bottom:8px;display:block}
+    .s-name{font-size:16px;font-weight:700;color:#f0ece0;margin-bottom:8px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px}
+    .tag{font-size:12px;color:#8a8478;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:4px 10px;border-radius:100px}
+
+    /* WHY */
+    .why{display:flex;flex-direction:column;gap:10px}
+    .why-item{
+      display:flex;align-items:flex-start;gap:14px;
+      padding:16px;background:linear-gradient(135deg,var(--bg3),rgba(18,15,6,0.7));
+      border:1px solid rgba(255,255,255,0.07);border-radius:12px;
+    }
+    .why-check{
+      width:28px;height:28px;flex-shrink:0;
+      border-radius:50%;background:var(--gold-dim);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--gold);font-size:14px;font-weight:700;
+    }
+    .why-t{font-size:15px;color:#b8b0a0;line-height:1.7}
+
+    /* CTA */
+    .cta-wrap{padding:0 20px 48px}
+    .cta-box{
+      background:linear-gradient(145deg,rgba(28,22,8,0.9),var(--bg3));
+      border:1px solid rgba(245,200,66,0.22);
+      border-radius:20px;
+      padding:36px 16px;
+      text-align:center;
+      box-shadow:0 0 40px rgba(245,200,66,0.05) inset;
+    }
+    .cta-title{font-size:22px;font-weight:900;color:#fff;margin-bottom:10px;line-height:1.4}
+    .cta-sub{font-size:15px;color:var(--muted);margin-bottom:24px;line-height:1.8}
+    .cta-btn-wrap{margin-bottom:14px}
+    .cta-wa{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      background:var(--green);color:#fff;
+      font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;
+      padding:15px 20px;border-radius:10px;text-decoration:none;
+      width:100%;
+    }
+    .cta-phone{font-size:14px;color:#5a5650;direction:ltr;display:block;margin-bottom:6px}
+    .cta-note{font-size:13px;color:var(--muted);margin-bottom:16px}
+
+    /* FORM */
+    .form{display:flex;flex-direction:column;gap:10px}
+    .form input{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:10px;color:var(--text);
+      font-family:'Cairo',sans-serif;font-size:16px;
+      padding:14px 16px;text-align:right;outline:none;
+      width:100%;
+      -webkit-appearance: none; /* يضمن مظهر متناسق على هواتف آيفون */
+    }
+    .form input::placeholder{color:#4a4640}
+    .form input:focus{border-color:rgba(240,192,96,.5)}
+    .form-btn{
+      background:linear-gradient(135deg,#d4a520,var(--gold));
+      color:#0d0d18;border:none;
+      border-radius:10px;font-family:'Cairo',sans-serif;
+      font-size:16px;font-weight:700;padding:14px;cursor:pointer;
+      width:100%;
+      box-shadow:0 4px 18px rgba(245,200,66,0.25);
+    }
+    .form-ok{font-size:14px;color:#4dda6e;text-align:center;display:none;padding:6px}
+
+    footer{
+      text-align:center;padding:20px 16px;
+      border-top:1px solid var(--border);
+      font-size:13px;color:#3a3830;
+    }
+    footer b{color:var(--gold)}
+    </style>
+</head>
+<body>
+
+<div class="root">
+
+<nav class="nav">
+  <div class="nav-logo">Ahmed <b>Alaa</b></div>
+  <a href="https://api.whatsapp.com/send?phone=201016871850" target="_blank" class="nav-wa">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.123 1.535 5.856L.057 23.943l6.249-1.438A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.004-1.367l-.359-.214-3.71.853.88-3.608-.234-.372A9.785 9.785 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+    تواصل الآن
+  </a>
+</nav>
+
+<section class="hero">
+  <h1 class="hero-name">Ahmed <span>Alaa</span></h1>
+  <p class="hero-title">Digital Marketing Strategist</p>
+  <p class="hero-desc">أساعد المتاجر والبراندات على تحقيق نمو حقيقي وزيادة المبيعات من خلال استراتيجيات التسويق الرقمي وصناعة المحتوى والإعلانات المدفوعة.</p>
+  <div class="btns">
+    <a href="https://api.whatsapp.com/send?phone=201016871850" target="_blank" class="btn-wa">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.123 1.535 5.856L.057 23.943l6.249-1.438A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.004-1.367l-.359-.214-3.71.853.88-3.608-.234-.372A9.785 9.785 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+      تواصل عبر واتساب
+    </a>
+    <div class="btn-row">
+      <a href="#" class="btn-out">📊 نتائج الحملات الإعلانية</a>
+      <a href="#" class="btn-out">🎨 التصاميم الإبداعية</a>
+    </div>
+  </div>
+  <blockquote class="quote">التسويق الفعال لا يقاس بعدد المشاهدات، بل بعدد العملاء والمبيعات التي يحققها.</blockquote>
+</section>
+
+<hr>
+
+<div class="stats-wrap">
+  <p class="eyebrow">أرقام تتحدث</p>
+  <div class="stats-grid">
+    <div class="stat"><span class="stat-n">+7</span><span class="stat-l">سنوات خبرة</span></div>
+    <div class="stat"><span class="stat-n">3000+</span><span class="stat-l">حملة إعلانية</span></div>
+    <div class="stat"><span class="stat-n">500K+</span><span class="stat-l">جمهور عبر منصاتي</span></div>
+    <div class="stat"><span class="stat-n">3 أسواق</span><span class="stat-l">مصر · السعودية · الخليج</span></div>
+  </div>
+</div>
+
+<hr>
+
+<section class="sec">
+  <h2 class="sec-title-gold">خدماتي</h2>
+  <div class="services">
+    <div class="s-card">
+      <span class="s-ico">📈</span>
+      <p class="s-name">إدارة الحملات الإعلانية</p>
+      <div class="tags"><span class="tag">Meta Ads</span><span class="tag">TikTok Ads</span><span class="tag">Snapchat Ads</span></div>
+    </div>
+    <div class="s-card">
+      <span class="s-ico">🎯</span>
+      <p class="s-name">استراتيجية المحتوى</p>
+      <div class="tags"><span class="tag">Content Strategy</span><span class="tag">Copywriting</span></div>
+    </div>
+    <div class="s-card">
+      <span class="s-ico">🎨</span>
+      <p class="s-name">تصميمات السوشيال ميديا</p>
+      <div class="tags"><span class="tag">Social Media Design</span></div>
+    </div>
+    <div class="s-card">
+      <span class="s-ico">🎥</span>
+      <p class="s-name">فيديوهات إعلانية</p>
+      <div class="tags"><span class="tag">AI Video Ads</span><span class="tag">Reels</span></div>
+    </div>
+    <div class="s-card">
+      <span class="s-ico">📊</span>
+      <p class="s-name">تحليل الأداء</p>
+      <div class="tags"><span class="tag">Reports</span><span class="tag">Optimization</span></div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="sec">
+  <h2 class="sec-title-white">لماذا العمل معي؟</h2>
+  <div class="why">
+    <div class="why-item"><div class="why-check">✓</div><p class="why-t">زيادة المبيعات بأفضل عائد على ميزانية التسويق.</p></div>
+    <div class="why-item"><div class="why-check">✓</div><p class="why-t">قرارات مبنية على البيانات وليس التخمين.</p></div>
+    <div class="why-item"><div class="why-check">✓</div><p class="why-t">تطوير الحملات باستمرار للوصول إلى أفضل النتائج.</p></div>
+    <div class="why-item"><div class="why-check">✓</div><p class="why-t">تواصل مستمر وتقارير واضحة عن الأداء.</p></div>
+  </div>
+</section>
+
+<div class="cta-wrap">
+  <div class="cta-box">
+    <h2 class="cta-title">هل أنت مستعد لتنمية مبيعات مشروعك?</h2>
+    <p class="cta-sub">يسعدني مناقشة مشروعك واختيار أفضل استراتيجية تناسب نشاطك التجاري.</p>
+    <div class="cta-btn-wrap">
+      <a href="https://api.whatsapp.com/send?phone=201016871850" target="_blank" class="cta-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.123 1.535 5.856L.057 23.943l6.249-1.438A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.004-1.367l-.359-.214-3.71.853.88-3.608-.234-.372A9.785 9.785 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+        تواصل عبر واتساب
+      </a>
+    </div>
+    <p class="cta-phone">📞 01016871850</p>
+    <p class="cta-note">أو اترك بياناتك وسأتواصل معك في أقرب وقت.</p>
+    <form class="form" id="contactForm">
+
+  <input
+    type="text"
+    name="name"
+    placeholder="اسمك"
+    required
+  >
+
+  <input
+    type="tel"
+    name="phone"
+    placeholder="رقم هاتفك"
+    required
+  >
+
+  <button class="form-btn" type="submit">
+    إرسال بياناتك
+  </button>
+
+  <p class="form-ok" id="ok" style="display:none;">
+    ✅ تم الاستلام! سأتواصل معك قريباً.
+  </p>
+
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const form = e.target;
+
+    const response = await fetch("https://formspree.io/f/mnjkpkko", {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+            "Accept": "application/json"
+        }
+    });
+
+    if (response.ok) {
+        document.getElementById("ok").style.display = "block";
+        form.reset();
+    } else {
+        alert("حدث خطأ أثناء الإرسال، حاول مرة أخرى.");
+    }
+
+});
+</script>
+  </div>
+</div>
+
+<footer>كل الحقوق محفوظة © 2025 · <b>Ahmed Alaa</b></footer>
+
+</div>
+<script>
+function send(){
+  var n=document.getElementById('n').value.trim();
+  var p=document.getElementById('p').value.trim();
+  if(!n||!p){alert('من فضلك أدخل اسمك ورقم هاتفك.');return;}
+  document.getElementById('ok').style.display='block';
+  document.getElementById('n').value='';
+  document.getElementById('p').value='';
+}
+</script>
+</body>
+</html>
